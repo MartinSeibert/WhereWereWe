@@ -1,0 +1,25 @@
+http://www.tangowithdjango.com/book17/
+
+using 'pyenv' to manage python versions, using 2.7.9 for this tut
+change with:
+[
+	$ pyenv versions
+	* system
+	  2.7.9
+
+	$ pyenv global 2.7.9
+]
+
+remember when you go production: pip install pillow
+* 3.2.7 of tut has a great thing about sharing a package list
+
+
+Set this up later: https://realpython.com/blog/python/setting-up-sublime-text-3-for-full-stack-python-development/
+
+goals:
+
+- user can add a show and a group of people they are watching with
+- user can see shows they are watching and their progress
+
+
+GOT TO END OF THIS PAGE http://www.tangowithdjango.com/book17/chapters/requirements.html
