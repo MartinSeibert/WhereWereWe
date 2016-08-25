@@ -22,4 +22,5 @@ goals:
 - user can see shows they are watching and their progress
 
 
-GOT TO END OF THIS PAGE http://www.tangowithdjango.com/book17/chapters/requirements.html
+todo: fix it so that you do 127.0.0.1:8000/ instead of needing the /main/
+
