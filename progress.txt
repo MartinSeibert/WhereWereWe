@@ -24,3 +24,4 @@ goals:
 
 todo: fix it so that you do 127.0.0.1:8000/ instead of needing the /main/
 
+got to top of  http://www.tangowithdjango.com/book17/chapters/templates_static.html
