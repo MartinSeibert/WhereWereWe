@@ -1,6 +1,6 @@
 from django.http import HttpResponse
 from django.shortcuts import render
-from main.models import Show
+from main.models import Show, Episode
 
 def index(request):
 
@@ -18,11 +18,35 @@ def index(request):
 	return render(request, 'main/index.html', context_dict)
 	
 
-def shows(request):
+def dagashiKashi(request):
 
 	context_dict = {'title': "DAGASHI KASHI"}
 
-	return render(request, 'main/shows.html', context_dict)
+	return render(request, 'main/dagashiKashi.html', context_dict)
 
 def about(request):
 	return HttpResponse('Developed by Martin Seibert.<a href="/main/">Return home</a>')
+
+def show(request, show_title_slug):
+
+	# create a context dictionary which we can pass to the template rendering engine
+	context_dict = {}
+
+	try: 
+		# Can we find a show title slug with the given title?
+		# If we can't, the .get() method raises a DoesNotExist exception.
+		show = Show.objects.get(slug=show_title_slug)
+		context_dict['show_title'] = show.title
+
+		# Retrieve all of the associated episodes.
+		# Note that the filter returns >= 1 model instance.
+		episodes = Episode.objects.filter(show = show)
+		context_dict['episodes'] = episodes
+		context_dict['show'] = show
+	except Show.DoesNotExist:
+		# we get here if we didn't find the specified show.
+		# don't do anything - the template displays the "no show" message for us.
+		pass
+
+	# Go render the response and return it to the client.
+	return render(request, 'main/show.html', context_dict)

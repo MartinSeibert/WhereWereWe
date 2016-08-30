@@ -18,15 +18,13 @@
 		Message:<strong>{{ boldmessage }}</strong><br />
 		<a href="/main/about/">About</a><br />
 		
-		<a href="/main/shows/"><h2>SHOWS</h2></a><br />
+		<a href="/main/dagashiKashi/"><h2>dagashiKashi</h2></a><br />
 
 		{% if shows %}
 			<ul>
 				{% for show in shows %}
 				<li>
-					<strong>{{ show.title }}</strong>
-					<br />
-					Episodes: {{ show.episodes }}
+					<a href="/main/show/{{ show.slug }}">{{ show.title }}</a>					
 				</li>
 				<br />
 				{% endfor %}

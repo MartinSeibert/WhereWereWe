@@ -2,9 +2,23 @@ from django.db import models
 from django.template.defaultfilters import slugify
 
 # Create your models here.
+
+class Episode(models.Model):
+	title = models.CharField(max_length=128)
+
+	slug = models.SlugField()
+
+	def save(self, *args, **kwargs):
+
+		self.slug = slugify(self.title)
+		super(Episode, self).save(*args, **kwargs)
+
+		def __unicode(self):
+			return self.title
+
 class Show(models.Model):
 	title = models.CharField(max_length=128)
-	episodes = models.IntegerField(default=0)
+	episodes = models.ManyToManyField(Episode)
 
 	# a slug field replaces spaces in the title with hyphens so that we can create human readable urls
 	slug = models.SlugField()

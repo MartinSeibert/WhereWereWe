@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Show</title>
+	</head>
+
+	<body>
+		{% if show %}
+		<h1>{{ show_title }}</h1>
+			{% if episodes %}
+			<ul>
+				{% for episode in episodes %}
+				<li>{{ episode.title }}</li>
+				{% endfor %}
+			</ul>
+			{% else %}
+				<strong>No episodes currently in category</strong>
+				{% endif %}
+			{% else %}
+				The specified show {{ show_title }} does not exist!
+			{% endif %}
+	</body>
+</html>
+		

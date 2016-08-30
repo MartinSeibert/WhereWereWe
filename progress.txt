@@ -38,5 +38,8 @@ got to "7.3.3. Category Page Workflow
 With our URLs design chosen, let’s get started. We’ll undertake the following steps."
 on page http://www.tangowithdjango.com/book17/chapters/models_templates.html
 
-- about to add urls for the shows to display 'show-details'
+NOTE: if you want to change a field from a primitive to a ManyToMany, you must first remove the field, makemigrations, and then migrate. After that, add the ManyToMany, makemigrations, and migrate.
 
+
+
+got to http://www.tangowithdjango.com/book17/chapters/forms.html
