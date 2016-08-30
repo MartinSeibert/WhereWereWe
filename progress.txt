@@ -24,4 +24,19 @@ goals:
 
 todo: fix it so that you do 127.0.0.1:8000/ instead of needing the /main/
 
-got to top of  http://www.tangowithdjango.com/book17/chapters/templates_static.html
+at some point, postgresql may make more sense than sqlite but for now sqlite will do just fine
+
+NOTE: Whenever you add to existing models, you will have to repeat this process running python manage.py makemigrations <app_name>, and then python manage.py migrate
+
+NOTE: to customize the admin interface, check out https://docs.djangoproject.com/en/1.7/ref/contrib/admin/
+Also see https://docs.djangoproject.com/en/1.7/intro/tutorial02/
+
+NOTE: Look at section (6.7. Creating a Population Script) for instructions to generate test data programatically
+
+got to "7.3.3. Category Page Workflow
+
+With our URLs design chosen, let’s get started. We’ll undertake the following steps."
+on page http://www.tangowithdjango.com/book17/chapters/models_templates.html
+
+- about to add urls for the shows to display 'show-details'
+

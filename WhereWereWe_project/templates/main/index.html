@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<!-- This allows you to use the static files in the /static/ folder -->
+{% load staticfiles %}
+
+<html>
+
+	<head>
+		<title>Where Were We?</title>
+		<!-- Examples of css or js staticfile references:
+			<link rel="stylesheet" href="{% static "css/base.css" %}" />
+			<script src="{% static "js/jquery.js" %}"></script>
+		-->
+	</head>
+
+	<body>
+		<h1>Where Were We homepage</h1>
+		Message:<strong>{{ boldmessage }}</strong><br />
+		<a href="/main/about/">About</a><br />
+		
+		<a href="/main/shows/"><h2>SHOWS</h2></a><br />
+
+		{% if shows %}
+			<ul>
+				{% for show in shows %}
+				<li>
+					<strong>{{ show.title }}</strong>
+					<br />
+					Episodes: {{ show.episodes }}
+				</li>
+				<br />
+				{% endfor %}
+			</ul>
+		{% else %}
+			<strong>There are no shows at this time.</strong>
+		{% endif %}
+		<br />
+		<a href="/main/about">About</a>	
+	</body>
+
+</html>
