@@ -1,5 +1,6 @@
 from django.db import models
 from django.template.defaultfilters import slugify
+from django.contrib.auth.models import User
 
 # Create your models here.
 
@@ -35,11 +36,13 @@ class Show(models.Model):
 	def __unicode(self):
 		return self.title
 
-class User(models.Model):
-	email = models.EmailField(max_length=254, unique=True)
-	name = models.CharField(max_length=128)
+class UserProfile(models.Model):
+
+	# links UserProfile to a User model instance (User is native to django)
+	user = models.OneToOneField(User)
 	shows = models.ManyToManyField(Show)
+	picture = models.ImageField(upload_to='profile_images', blank=True)
+
 	# this is for python 2, for python 3 use __str__
 	def __unicode__(self):		
-		return self.email
-
+		return self.user.username

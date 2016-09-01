@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Add Show</title>
+	</head>
+
+	<body>
+		<h1>Add a Show</h1>
+		<form id="show_form" method="post" action="/main/add_show/">
+			{% csrf_token %}
+			{% for hidden in form.hidden_fields %}
+				{{ hidden }}
+			{% endfor %}
+
+			{% for field in form.visible_fields %}
+				{{ field.errors }}
+				{{ field.help_text }}
+				{{ field }}
+			{% endfor %}
+
+			<input type="submit" name="submit" value="Create Show" />
+		</form>
+	</body>
+</html>

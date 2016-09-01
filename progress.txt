@@ -40,6 +40,13 @@ on page http://www.tangowithdjango.com/book17/chapters/models_templates.html
 
 NOTE: if you want to change a field from a primitive to a ManyToMany, you must first remove the field, makemigrations, and then migrate. After that, add the ManyToMany, makemigrations, and migrate.
 
+NOTE: TO INSTALL PILLOW:
+	sudo apt-get install python-dev
+	sudo apt-get install libjpeg8-dev
+	sudo ln -s /usr/lib/x86_64-linux-gnu/libjpeg.so /usr/lib
+
+	pip install pillow
 
 
-got to http://www.tangowithdjango.com/book17/chapters/forms.html
+got to http://www.tangowithdjango.com/book17/chapters/login.html
+at "9.4.1. Creating the UserForm and UserProfileForm"

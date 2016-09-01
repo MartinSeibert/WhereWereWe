@@ -1,6 +1,8 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 from main.models import Show, Episode
+from main.forms import ShowForm
+
 
 def index(request):
 
@@ -50,3 +52,25 @@ def show(request, show_title_slug):
 
 	# Go render the response and return it to the client.
 	return render(request, 'main/show.html', context_dict)
+
+def add_show(request):
+
+	if request.method == 'POST':
+		form = ShowForm(request.POST)
+
+		# Have we been provided with a valid form?
+		if form.is_valid():
+			# save the new category to the database
+			form.save(commit=True)
+
+			# Now call the index() view.
+			# The user will be shown the homepage
+			return index(request)
+		else:
+			# The supplied form contained errors - just print them to the terminal.
+			print form.errors
+	else:
+		# If the request was not a POST, display the form to enter details.
+		form = ShowForm()
+
+	return render(request, 'main/add_show.html', {'form': form})
