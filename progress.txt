@@ -47,6 +47,9 @@ NOTE: TO INSTALL PILLOW:
 
 	pip install pillow
 
+NOTE: Be sure to change the password hashing mechanism to bcrypt or something more secure than the default
+
 
 got to http://www.tangowithdjango.com/book17/chapters/login.html
 at "9.4.1. Creating the UserForm and UserProfileForm"
+
