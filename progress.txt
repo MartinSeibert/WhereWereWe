@@ -49,6 +49,9 @@ NOTE: TO INSTALL PILLOW:
 
 NOTE: Be sure to change the password hashing mechanism to bcrypt or something more secure than the default
 
+NOTE: There is more information about how to authenticate user emails and things of that sort at 9.8. Exercises on http://www.tangowithdjango.com/book17/chapters/login.html
 
-GOT TO Creating a Login Template on page http://www.tangowithdjango.com/book17/chapters/login.html
+NOTE: You can further abstract template blocks, details here: https://docs.djangoproject.com/en/1.7/topics/templates/#id1
+
+got to 10.5. Exercises¶ on  http://www.tangowithdjango.com/book17/chapters/templates.html
 

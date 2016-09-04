@@ -1,3 +1,45 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block title %}{{ show_title }}{% endblock %}
+
+{% block body_block %}
+	<h1>{{ show_title }}</h1>
+	{% if show %}
+		{% if episodes %}
+		<ul>
+			{% for episode in episodes %}
+			<li>{{ episode.title }}</li>
+			{% endfor %}
+		</ul>
+
+		{% else %}
+			<strong>This show has no episodes.</strong>
+		{% endif %}
+	{% if user.is_authenticated %}
+		<a href="/main/show/{{show.slug}}/add_episode/">Add an episode</a>
+	{% endif %}
+
+	{% else %}
+		The specified show {{ show_title }} does not exist!
+
+	{% endif %}
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html>
 	<head>

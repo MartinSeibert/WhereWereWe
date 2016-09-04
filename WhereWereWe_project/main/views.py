@@ -1,5 +1,7 @@
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
+from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.decorators import login_required
 from main.models import Show, Episode
 from main.forms import ShowForm, UserForm, UserProfileForm
 
@@ -162,9 +164,19 @@ def user_login(request):
 			# Bad login details were provided
 			# To display username and password, replace the print statement with print "Invalid login details: {0}, {1}".format(username, password)			
 			print "Username or password is incorrect"
+			return HttpResponse("Invalid login credentials provided.")
 
 		# The request is not a HTTP POST, it's likely a GET so display the login form
 	else:
 		# No context variables to pass to the template system, hence the blank dictionary object
 		return render(request, 'main/login.html', {})
-	
+
+# Use the login_required() decorator to ensure only those logged in can access the view.
+# The @ denotes that this method is a PYTHON DECORATOR
+@login_required
+def user_logout(request):
+	# Since we know the user is logged in, we can now just log them out.
+	logout(request)
+
+	# Take the user back to the homepage.
+	return HttpResponseRedirect('/main/')

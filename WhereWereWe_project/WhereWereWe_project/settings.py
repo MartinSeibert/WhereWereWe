@@ -98,3 +98,5 @@ TEMPLATE_DIRS = (
 # These help configure the media server portion
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')    # path to the media directory
+
+LOGIN_URL = '/main/login/'
