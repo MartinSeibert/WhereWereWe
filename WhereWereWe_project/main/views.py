@@ -30,7 +30,8 @@ def dagashiKashi(request):
 	return render(request, 'main/dagashiKashi.html', context_dict)
 
 def about(request):
-	return HttpResponse('Developed by Martin Seibert.<a href="/main/">Return home</a>')
+	
+	return render(request, 'main/about.html')
 
 def show(request, show_title_slug):
 
