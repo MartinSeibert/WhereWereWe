@@ -3,7 +3,9 @@
 {% block title %}{{ show_title }}{% endblock %}
 
 {% block body_block %}
-	<h1>{{ show_title }}</h1>
+<div class="page-header">
+			<h1>{{ show_title }}</h1>
+		</div>
 	{% if show %}
 		{% if episodes %}
 		<ul>

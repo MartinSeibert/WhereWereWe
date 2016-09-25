@@ -60,4 +60,4 @@ At some point, change login and register to use forms from forms.py rather than 
 
 At some point, provide users with password change functionality (http://www.tangowithdjango.com/book17/chapters/login_redux.html)
 
-got to http://www.tangowithdjango.com/book17/chapters/login_redux.html
+got to 13.2.1. The Index Page on http://www.tangowithdjango.com/book17/chapters/bootstrap.html

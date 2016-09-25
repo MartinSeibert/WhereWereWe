@@ -4,7 +4,9 @@
 
 {% block body_block %}
 	
-	<h1>Add a Show</h1>
+	<div class="page-header">
+			<h1>Add a Show</h1>
+		</div>
 	<form id="show_form" method="post" action="/main/add_show/">
 		{% csrf_token %}
 		{% for hidden in form.hidden_fields %}
