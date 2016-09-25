@@ -53,7 +53,11 @@ NOTE: There is more information about how to authenticate user emails and things
 
 NOTE: You can further abstract template blocks, details here: https://docs.djangoproject.com/en/1.7/topics/templates/#id1
 
-got to 10.5. Exercises¶ on  http://www.tangowithdjango.com/book17/chapters/templates.html
 
-next steps: Change login and register to utilize the template like show.html does
-then, change login and register to use forms from forms.py rather than an inline form
+ISSUE: A show can be added that already exists, which causes problems if you try to view that show
+
+At some point, change login and register to use forms from forms.py rather than an inline form
+
+At some point, provide users with password change functionality (http://www.tangowithdjango.com/book17/chapters/login_redux.html)
+
+got to http://www.tangowithdjango.com/book17/chapters/login_redux.html

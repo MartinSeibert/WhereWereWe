@@ -37,6 +37,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'main',
+    'registration',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -99,4 +100,10 @@ TEMPLATE_DIRS = (
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')    # path to the media directory
 
-LOGIN_URL = '/main/login/'
+
+
+REGISTRATION_OPEN = True        # If true, users can register
+ACCOUNT_ACTIVATION_DAYS = 7     # One week activation window
+REGISTRATION_AUTO_LOGIN = True  # If true, users are automatically logged in
+LOGIN_REDIRECT_URL = '/main/'   # The page to send users to after a successful login
+LOGIN_URL = '/accounts/login/'  # The page users are directed to if they aren't logged in and attempt to access a restricted page
