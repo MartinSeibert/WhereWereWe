@@ -6,28 +6,36 @@
 
 	{% block body_block %}
 	
-		<div class="page-header">
-			<h1>Where Were We?</h1>
+		<div class="panel panel-primary">
+		<div class="panel-heading">
+			<h3 class="panel-title">Where Were We?</h3>
 		</div>
-		<br />
-
 		
-		<a href="/main/about/">About</a><br />
+		<br />				
 		
-		<a href="/main/dagashiKashi/"><h2>dagashiKashi</h2></a><br />
+		<div class="row placeholders">
+			<div class="col-xs-3 col-sm-3 placeholder">
+				<h4>Shows</h4>
 
-		{% if shows %}
-			<ul>
-				{% for show in shows %}
-				<li>
-					<a href="{% url 'show' show.slug %}">{{ show.title }}</a>					
-				</li>
-				<br />
-				{% endfor %}
-			</ul>
-		{% else %}
-			<strong>There are no shows at this time.</strong>
-		{% endif %}
+				<ul class="list-group">
+					<li class="list-group-items">
+						<a href="/main/dagashiKashi/"><h2>Dagashi Kashi</h2></a><br />
+					</li>
+				{% if shows %}
+					
+						{% for show in shows %}
+						<li class="list-group-items">
+							<a href="{% url 'show' show.slug %}">{{ show.title }}</a>					
+						</li>
+						<br />
+						{% endfor %}
+					
+				{% else %}
+					<strong>There are no shows at this time.</strong>
+				</ul>
+				{% endif %}
+			</div>
+		</div>
 		<br />
 		<br />
 	
