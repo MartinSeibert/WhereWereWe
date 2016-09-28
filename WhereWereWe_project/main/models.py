@@ -14,8 +14,8 @@ class Episode(models.Model):
 		self.slug = slugify(self.title)
 		super(Episode, self).save(*args, **kwargs)
 
-		def __unicode(self):
-			return self.title
+	def __unicode__(self):
+		return self.title
 
 class Show(models.Model):
 	title = models.CharField(max_length=128)
@@ -33,7 +33,7 @@ class Show(models.Model):
 		self.slug = slugify(self.title)
 		super(Show, self).save(*args, **kwargs)
 
-	def __unicode(self):
+	def __unicode__(self):
 		return self.title
 
 class UserProfile(models.Model):
