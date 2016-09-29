@@ -58,6 +58,8 @@ ISSUE: A show can be added that already exists, which causes problems if you try
 
 At some point, change login and register to use forms from forms.py rather than an inline form
 
+TODO: Register looks bad and doesn't require two passwords to match
+
 At some point, provide users with password change functionality (http://www.tangowithdjango.com/book17/chapters/login_redux.html)
 
-got to 13.2.1. The Index Page on http://www.tangowithdjango.com/book17/chapters/bootstrap.html
+got to http://www.tangowithdjango.com/book17/chapters/template_tags.html
