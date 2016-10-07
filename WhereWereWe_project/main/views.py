@@ -4,6 +4,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from main.models import Show, Episode
 from main.forms import ShowForm, UserForm, UserProfileForm
+from django.template.defaultfilters import slugify
 
 
 
@@ -19,7 +20,7 @@ def index(request):
 
 	# return a rendered response to send to the client
 	# second parameter is the template, third is the context dictionary
-
+	
 	return render(request, 'main/index.html', context_dict)
 	
 
@@ -36,12 +37,16 @@ def about(request):
 def show(request, show_title_slug):
 
 	# create a context dictionary which we can pass to the template rendering engine
+	
 	context_dict = {}
 
 	try: 
 		# Can we find a show title slug with the given title?
 		# If we can't, the .get() method raises a DoesNotExist exception.
-		show = Show.objects.get(slug=show_title_slug)
+		# The .get method also freaks out if there is more than one result, so for now we will use filter with .first() to ensure that there is no issue if the same show is in there twice.
+		# show = Show.objects.get(slug=show_title_slug)
+		show = Show.objects.filter(slug=show_title_slug).first()
+		
 		context_dict['show_title'] = show.title
 
 		# Retrieve all of the associated episodes.
@@ -64,6 +69,11 @@ def add_show(request):
 
 		# Have we been provided with a valid form?
 		if form.is_valid():
+			data = form.cleaned_data
+			#show = Show.objects.get(slugify(data['title']))
+			# if show != null, then don't save the form!
+
+			
 			# save the new category to the database
 			form.save(commit=True)
 

@@ -62,4 +62,11 @@ TODO: Register looks bad and doesn't require two passwords to match
 
 At some point, provide users with password change functionality (http://www.tangowithdjango.com/book17/chapters/login_redux.html)
 
+Fixed issue with show view not loading if more than one instance exists in the database, working on ensuring that duplicate shows cannot be added. Go to [data = form.cleaned_data
+			#show = Show.objects.get(slugify(data['title']))
+			# if show != null, then don't save the form!]
+
+			on the views.py to continue the work on that
+
 got to http://www.tangowithdjango.com/book17/chapters/template_tags.html
+
