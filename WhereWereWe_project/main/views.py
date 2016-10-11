@@ -8,6 +8,7 @@ from django.template.defaultfilters import slugify
 
 
 
+
 def index(request):
 
 	# construct a dictionary to pass to the template engine as its context.
@@ -69,14 +70,8 @@ def add_show(request):
 
 		# Have we been provided with a valid form?
 		if form.is_valid():
-			data = form.cleaned_data
-			#show = Show.objects.get(slugify(data['title']))
-			# if show != null, then don't save the form!
-
 			
-			# save the new category to the database
 			form.save(commit=True)
-
 			# Now call the index() view.
 			# The user will be shown the homepage
 			return index(request)
