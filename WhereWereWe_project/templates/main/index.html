@@ -3,16 +3,23 @@
 
 {% block title %}Where Were We?{% endblock %}
 
+{% block side_block %}
+<!-- This is where the stuff would for the bar along the side. -->
+{% endblock %}
 
 	{% block body_block %}
 	
+	<!-- 
 		<div class="panel panel-primary">
 		<div class="panel-heading">
 			<h3 class="panel-title">Where Were We?</h3>
 		</div>
-		
+	-->
+
 		<br />				
 		
+	{% if user.is_authenticated %}
+
 		<div class="row placeholders">
 			<div class="col-xs-5 col-sm-5 placeholder">
 				<h4>Shows</h4>
@@ -37,6 +44,26 @@
 				{% endif %}
 			</div>
 		</div>
+
+	{% else %}
+
+ 	<div class="col-sm-4 col-sm-offset-2">
+	 		
+	 	<div class="row extra-bottom-padding">
+	 		<h2 class="text-center"> Where Were We? </h2>
+	 	</div>
+	 	<div class="row extra-bottom-padding">
+	 		<a class="btn btn-primary btn-block" href="{% url 'login' %}" role="button">Login</a>
+	 	</div>
+	 	<div class="row extra-bottom-padding">
+			<a class="btn btn-default btn-block" href="{% url 'register' %}" role="button">Register</a>
+	 	</div>
+	 			
+ 	</div>
+
+	{% endif %}
+
+		
 		<br />
 		<br />
 	
