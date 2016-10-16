@@ -5,16 +5,20 @@
 {% block body_block %}
 	<link href="http://getbootstrap.com/examples/signin/signin.css" rel="stylesheet">
 
-	<h1>Login</h1>
-	<form class="form-signin" role="form" method="post" action="/main/login/"/>
-		{% csrf_token %}
-		<h2 class="form-signin-heading">Please sign in</h2>
 
-		<input class="form-control" placeholder="Username" id="id_username" maxlength="254" name="username" type="text" required autofocus=""/>
-
-		<input type="password" class="form-control" placeholder="Password" id="id_password" name="password" required />
+	<div class="col-sm-4 col-sm-offset-3">
+		<div class="row extra-bottom-padding">
+	 		<h2 class="text-center"> Please Sign In</h2>
+	 	</div>
+		<form class="form-signin" role="form" method="post" action="/main/login/"/>
+			{% csrf_token %}
 			
-			<button class="btn btn-lg btn-primary btn-block" type="submit" value="Submit" >Sign in</button>
-		</form>
+			<input class="form-control" placeholder="Username" id="id_username" maxlength="254" name="username" type="text" required autofocus=""/>
+
+			<input type="password" class="form-control" placeholder="Password" id="id_password" name="password" required />
+				
+				<button class="btn btn-lg btn-primary btn-block" type="submit" value="Submit" >Sign in</button>
+			</form>
+	</div>
 
 {% endblock %}
