@@ -58,8 +58,6 @@ ISSUE: A show can be added that already exists, which causes problems if you try
 
 At some point, change login and register to use forms from forms.py rather than an inline form
 
-TODO: Register looks bad and doesn't require two passwords to match
-
 At some point, provide users with password change functionality (http://www.tangowithdjango.com/book17/chapters/login_redux.html)
 
 Fixed issue with show view not loading if more than one instance exists in the database, working on ensuring that duplicate shows cannot be added. Go to [data = form.cleaned_data
@@ -67,6 +65,21 @@ Fixed issue with show view not loading if more than one instance exists in the d
 			# if show != null, then don't save the form!]
 
 			on the views.py to continue the work on that
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+TODO LIST:
+
+- Register looks bad and doesn't require two passwords to match
+- About screen needs work
+- Shows should pull in info from tvdb
+	- show data should be pulled from tvdb when they are added and store some of it in the db
+- 
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
 
 got to http://www.tangowithdjango.com/book17/chapters/template_tags.html
 
