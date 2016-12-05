@@ -4,7 +4,7 @@
 
 {% block body_block %}
 	
-<form role="form" id="show_form" method="post" action="/main/add_show/">
+<form role="form" id="show_form" method="post" action="/add_show/">
 		<h2 class="form-signin-heading">Add a Show</h2>
 		{% csrf_token %}
 		{% for hidden in form.hidden_fields %}

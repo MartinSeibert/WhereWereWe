@@ -22,7 +22,7 @@ goals:
 - user can see shows they are watching and their progress
 
 
-todo: fix it so that you do 127.0.0.1:8000/ instead of needing the /main/
+
 
 at some point, postgresql may make more sense than sqlite but for now sqlite will do just fine
 
