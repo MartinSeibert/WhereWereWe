@@ -18,7 +18,7 @@
 			<strong>This show has no episodes.</strong>
 		{% endif %}
 	{% if user.is_authenticated %}
-		<a href="/main/show/{{show.slug}}/add_episode/">Add an episode</a>
+		<a href="/show/{{show.slug}}/add_episode/">Add an episode</a>
 	{% endif %}
 
 	{% else %}
