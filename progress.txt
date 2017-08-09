@@ -83,3 +83,10 @@ TODO LIST:
 
 got to http://www.tangowithdjango.com/book17/chapters/template_tags.html
 
+
+
+------------------------------------------------------------------------------------------------
+8-8-17
+Doing some playing around on testboard.py, looking to get the tvdb data in when adding a show
+then, get the search to prepopulate with results from tvdb api
+NOTE: TheTVDB api has changed over to a JSON restful api, so switch over to this. The old API will no longer function starting in october [https://api.thetvdb.com/swagger]

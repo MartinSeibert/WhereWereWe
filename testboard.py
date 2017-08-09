@@ -2,10 +2,13 @@
 
 from pytvdbapi import api
 db = api.TVDB("B43FF87DE395DF56")
-result = db.search("Attack on Titan", "en")
+result = db.search("Attack on titan", "en")
 
 # If there's a perfect match, the result will be in the 0th element
 # If not, the results will be in the order in which they may match so you could search for A or something
+
+print result
+
 
 show = result[0]
 
