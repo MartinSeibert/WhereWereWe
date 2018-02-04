@@ -90,3 +90,13 @@ got to http://www.tangowithdjango.com/book17/chapters/template_tags.html
 Doing some playing around on testboard.py, looking to get the tvdb data in when adding a show
 then, get the search to prepopulate with results from tvdb api
 NOTE: TheTVDB api has changed over to a JSON restful api, so switch over to this. The old API will no longer function starting in october [https://api.thetvdb.com/swagger]
+
+2-4-18
+
+first things first I want to bring in the episodes when I draw in the tv data... and I don't want the user to create eposides when they are looking at the show itself
+
+instead of just being 'add a show', the user should search for shows and then from the show's page do 'add to watching' or something like that... when a show is picked from the list of shows brought back is when you should populate all of the information about the show.
+
+
+
+

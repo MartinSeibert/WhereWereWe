@@ -24,13 +24,6 @@ def index(request):
 	
 	return render(request, 'main/index.html', context_dict)
 	
-
-def dagashiKashi(request):
-
-	context_dict = {'title': "DAGASHI KASHI"}
-
-	return render(request, 'main/dagashiKashi.html', context_dict)
-
 def about(request):
 	
 	return render(request, 'main/about.html')
