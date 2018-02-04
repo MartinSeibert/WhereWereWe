@@ -98,5 +98,11 @@ first things first I want to bring in the episodes when I draw in the tv data...
 instead of just being 'add a show', the user should search for shows and then from the show's page do 'add to watching' or something like that... when a show is picked from the list of shows brought back is when you should populate all of the information about the show.
 
 
+should be able to use https://github.com/phate89/tvdbsimple
+api key is in /etc/tvdbapikey.txt
+
+https://github.com/phate89/tvdbsimple/wiki
+https://github.com/phate89/tvdbsimple/blob/master/EXAMPLES.rst
+
 
 
