@@ -105,4 +105,4 @@ https://github.com/phate89/tvdbsimple/wiki
 https://github.com/phate89/tvdbsimple/blob/master/EXAMPLES.rst
 
 
-
+on the api page (https://api.thetvdb.com/swagger#/Episodes), you can select 'expand operations' to see what data is available for the specific data type
