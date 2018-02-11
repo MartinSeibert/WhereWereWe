@@ -45,8 +45,17 @@ class Show():
 
 
 
-show = Show(267440)
+#show = Show(267440)
 
 #show.printEpisodes()
 
-print show.episodes[1]['episodeName']
+#print show.episodes[1]['episodeName']
+
+search = tvdb.Search()
+reponse = search.series("friends")
+
+
+for series in search.series:
+	print series['seriesName']
+
+print search.series[0]['overview']

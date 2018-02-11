@@ -6,7 +6,8 @@ from main.models import Show, Episode
 from main.forms import ShowForm, UserForm, UserProfileForm
 from django.template.defaultfilters import slugify
 
-
+import tvdbsimple as tvdb
+tvdb.KEYS.API_KEY = '491A6814F8241D30'
 
 
 def index(request):
@@ -55,6 +56,17 @@ def show(request, show_title_slug):
 
 	# Go render the response and return it to the client.
 	return render(request, 'main/show.html', context_dict)
+
+def search(request, search_text):
+	context_dict = {}
+
+	# search for series and pass them in as a list
+	search = tvdb.Search()
+	reponse = search.series(search_text)
+
+	context_dict['seriesList'] = search.series
+
+	return render(request, 'main/search.html', context_dict)
 
 def add_show(request):
 

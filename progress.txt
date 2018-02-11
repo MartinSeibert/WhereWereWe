@@ -106,3 +106,12 @@ https://github.com/phate89/tvdbsimple/blob/master/EXAMPLES.rst
 
 
 on the api page (https://api.thetvdb.com/swagger#/Episodes), you can select 'expand operations' to see what data is available for the specific data type
+
+
+2-11-18
+
+user searches for a show. Instantiate a tvdb.Search and execute the search for the passed in text.
+at first just show a list fo titles, and then later on maybe show a little picture and short description for each.
+
+when the search goes through, can pass the view the search.series which is a list of the search results in order
+
