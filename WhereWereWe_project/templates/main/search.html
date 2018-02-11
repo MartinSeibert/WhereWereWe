@@ -9,6 +9,7 @@
 		{% csrf_token %}
 		<input type="text" name="search_text" value="{{ search_text }}">
 		<br />
+		<br />
 		<button class="btn btn-primary" type="submit" name="submit">Search</button>
 	</form>
 	
@@ -26,6 +27,10 @@
 			<br />
 
 		{% endfor %}
+	{% endif %}
+
+	{% if showNotFound %}
+		<h2>Show not found!</h2>
 	{% endif %}
 
 {% endblock %}

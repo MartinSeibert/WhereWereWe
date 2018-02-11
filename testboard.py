@@ -51,11 +51,15 @@ class Show():
 
 #print show.episodes[1]['episodeName']
 
+#for series in search.series:
+#	print series['seriesName']
+
+#print search.series[0]['banner']
+
 search = tvdb.Search()
-reponse = search.series("friends")
 
+try:
+	reponse = search.series("degrassi tng")
+except:
+	print "Error occured, must not exist!!!"
 
-for series in search.series:
-	print series['seriesName']
-
-print search.series[0]['banner']

@@ -62,14 +62,17 @@ def search(request):
 
 	if request.method == 'POST':
 		search_text = request.POST.get("search_text", "")
-		print search_text
-		
+
 		context_dict['search_text'] = search_text
 		# search for series and pass them in as a list
-		search = tvdb.Search()
-		reponse = search.series(search_text)
+		try:
+			search = tvdb.Search()
+			reponse = search.series(search_text)
+			context_dict['seriesList'] = search.series
+		except:
+			context_dict['showNotFound'] = "show not found"
 
-		context_dict['seriesList'] = search.series
+		
 
 	return render(request, 'main/search.html', context_dict)
 
