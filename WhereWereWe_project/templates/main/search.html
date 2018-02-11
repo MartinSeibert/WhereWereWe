@@ -4,9 +4,27 @@
 
 {% block body_block %}
 
+<form role="form" id="search_form" method="post" action="/search/">
+		<h2 class="form-signin-heading">Search</h2>
+		{% csrf_token %}
+		<input type="text" name="search_text" value="{{ search_text }}">
+		<br />
+		<button class="btn btn-primary" type="submit" name="submit">Search</button>
+	</form>
+	
+	<br />
+	
 	{% if seriesList%}
 		{% for series in seriesList %}
-			<li>{{ series.seriesName }}</li>
+			<h4>{{ series.seriesName }}</h4>
+			<img src="http://thetvdb.com/banners/{{ series.banner }}" </img>
+			<br/>
+			{{ series.overview }}
+			
+			<br />
+			<br />
+			<br />
+
 		{% endfor %}
 	{% endif %}
 

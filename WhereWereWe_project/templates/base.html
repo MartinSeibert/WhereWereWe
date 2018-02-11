@@ -39,7 +39,7 @@
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">                
                     {% if user.is_authenticated %}
-                        <li><a href="{% url 'search' 'friends' %}">Search</a></li>
+                        <li><a href="{% url 'search' %}">Search</a></li>
                         <li><a href="{% url 'add_show' %}">Add a show</a></li>
                       <li><a href="{% url 'logout' %}?next=/">Logout</a></li>                       
                     {% else %}

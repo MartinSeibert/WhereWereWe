@@ -58,4 +58,4 @@ reponse = search.series("friends")
 for series in search.series:
 	print series['seriesName']
 
-print search.series[0]['overview']
+print search.series[0]['banner']
