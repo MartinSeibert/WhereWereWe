@@ -17,7 +17,7 @@
 	
 	{% if seriesList%}
 		{% for series in seriesList %}
-			<h4>{{ series.seriesName }}</h4>
+			<a href="{% url 'show' series.id %}"><h4>{{ series.seriesName }}</h4></a>
 			<img src="http://thetvdb.com/banners/{{ series.banner }}" </img>
 			<br/>
 			{{ series.overview }}

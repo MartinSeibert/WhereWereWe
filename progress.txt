@@ -115,3 +115,8 @@ at first just show a list fo titles, and then later on maybe show a little pictu
 
 when the search goes through, can pass the view the search.series which is a list of the search results in order
 
+2-13-18
+
+- make show title clickable to go to a show details page
+- get the show detail page fleshed out with details about the show
+- make it so that shows are able to be added to the users watching list

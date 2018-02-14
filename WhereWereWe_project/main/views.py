@@ -29,30 +29,13 @@ def about(request):
 	
 	return render(request, 'main/about.html')
 
-def show(request, show_title_slug):
+def show(request, series_id):
 
 	# create a context dictionary which we can pass to the template rendering engine
 	
 	context_dict = {}
 
-	try: 
-		# Can we find a show title slug with the given title?
-		# If we can't, the .get() method raises a DoesNotExist exception.
-		# The .get method also freaks out if there is more than one result, so for now we will use filter with .first() to ensure that there is no issue if the same show is in there twice.
-		# show = Show.objects.get(slug=show_title_slug)
-		show = Show.objects.filter(slug=show_title_slug).first()
-		
-		context_dict['show_title'] = show.title
-
-		# Retrieve all of the associated episodes.
-		# Note that the filter returns >= 1 model instance.
-		episodes = Episode.objects.filter(show = show)
-		context_dict['episodes'] = episodes
-		context_dict['show'] = show
-	except Show.DoesNotExist:
-		# we get here if we didn't find the specified show.
-		# don't do anything - the template displays the "no show" message for us.
-		pass
+	
 
 	# Go render the response and return it to the client.
 	return render(request, 'main/show.html', context_dict)
