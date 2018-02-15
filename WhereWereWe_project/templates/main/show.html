@@ -2,9 +2,20 @@
 {% load staticfiles %}
 {% block title %}Show Page{% endblock %}
 
+<link rel="stylesheet" href="{% static "stylesheets/show.css" %}" />
+
 {% block body_block %}
-<div class="page-header">
-			
-		</div>
+	<div class="page-header">
+		<h2>{{show.series.seriesName}}</h2>
+	</div>
+
+	<!-- errors out on posters[0]
+	<img src="http://thetvdb.com/banners/{{ show.series.posters[0] }}" </img>
+-->
+
+
+
+
+
 
 {% endblock %}

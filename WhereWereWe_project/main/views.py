@@ -9,6 +9,8 @@ from django.template.defaultfilters import slugify
 import tvdbsimple as tvdb
 tvdb.KEYS.API_KEY = '491A6814F8241D30'
 
+from show import Show
+
 
 def index(request):
 
@@ -35,6 +37,9 @@ def show(request, series_id):
 	
 	context_dict = {}
 
+	show = Show(series_id)
+
+	context_dict['show'] = show
 	
 
 	# Go render the response and return it to the client.

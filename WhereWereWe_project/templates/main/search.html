@@ -2,6 +2,8 @@
 {% load staticfiles %}
 {% block title %}Show Search{% endblock %}
 
+<link rel="stylesheet" href="{% static "stylesheets/search.css" %}" />
+
 {% block body_block %}
 
 <form role="form" id="search_form" method="post" action="/search/">
@@ -17,11 +19,13 @@
 	
 	{% if seriesList%}
 		{% for series in seriesList %}
-			<a href="{% url 'show' series.id %}"><h4>{{ series.seriesName }}</h4></a>
-			<img src="http://thetvdb.com/banners/{{ series.banner }}" </img>
+			<a href="{% url 'show' series.id %}"><h4>{{ series.seriesName }}</h4>
+				<img src="http://thetvdb.com/banners/{{ series.banner }}" </img>
+			</a>
 			<br/>
-			{{ series.overview }}
-			
+			<div class="seriesOverview">
+				{{ series.overview }}
+			</div>
 			<br />
 			<br />
 			<br />
