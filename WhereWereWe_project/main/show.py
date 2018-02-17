@@ -11,6 +11,7 @@ class Show():
 		self.seriesName = show.seriesName
 		self.episodes = show.Episodes.all()
 		self.posters = show.Images.poster()
+		
 
 
 	def printEpisodes(self):

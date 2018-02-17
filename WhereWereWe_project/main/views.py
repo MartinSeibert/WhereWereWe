@@ -19,9 +19,10 @@ def index(request):
 	# query the database for a list of all shows currently stored.
 	# order the categories alphabetically by title
 	# retrieve only the top 5
-	show_list = Show.objects.order_by('title')[:5]
-	context_dict = {'shows': show_list}
+	#show_list = Show.objects.order_by('title')[:5]
+	#context_dict = {'shows': show_list}
 
+	context_dict = {}
 	# return a rendered response to send to the client
 	# second parameter is the template, third is the context dictionary
 	
