@@ -9,8 +9,22 @@
 		<h2>{{show.series.seriesName}}</h2>
 	</div>
 
-	
-	<img  src="http://thetvdb.com/banners/{{ show.posters.0.fileName }}" height=418 width=284 </img>
+	<div class="row">
+		<div class="col-sm-3 col-md-3">
+			<img  src="http://thetvdb.com/banners/{{ show.posters.0.fileName }}" height=418 width=284 </img>
+		</div>
+		
+		<div class="col-sm-6 col-md-6 col-sm-offset-1 col-md-offset-1" >
+			<h4>Overview</h4>
+			<div class="seriesOverview">
+				{{ show.series.overview }}
+			</div>
+		</div>
+	</div>
+
+	<div class="row">
+		<h2>{{ show.seriesCount }} Seasons</h2>
+	</div>
 	
 
 

@@ -8,13 +8,19 @@ class Show():
 		show = tvdb.Series(id)
 		response = show.info()
 		self.series = show
-		self.seriesName = show.seriesName
+		#self.seriesName = show.seriesName
 		self.episodes = show.Episodes.all()
 		self.posters = show.Images.poster()
-		
 
+		maxSeason = 0
+		for episode in self.episodes:
+			if episode['airedSeason'] > maxSeason:
+				maxSeason = episode['airedSeason']
+		self.seriesCount = maxSeason
 
 	def printEpisodes(self):
 		for episode in self.episodes:
 			print str(episode['id']) + " : " + episode['episodeName']
+
+
 

@@ -120,3 +120,8 @@ when the search goes through, can pass the view the search.series which is a lis
 - make show title clickable to go to a show details page
 - get the show detail page fleshed out with details about the show
 - make it so that shows are able to be added to the users watching list
+- handle errors with no show found or no posters found
+- look at search and see if you can make it better
+- do something with the search for when no banner is found
+
+
