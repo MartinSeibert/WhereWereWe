@@ -125,3 +125,9 @@ when the search goes through, can pass the view the search.series which is a lis
 - do something with the search for when no banner is found
 
 
+5-13-18
+
+- had to bring in a fork of tvdbsimple because of an issue with the .Episodes.all() only working once
+- had to bring in Request with pipenv (interesting tool I should start using)
+
+- the way I determine the number of seasons is really slow for shows with lots of episodes... need to find a better way 
