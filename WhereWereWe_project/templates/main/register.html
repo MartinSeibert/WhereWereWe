@@ -12,13 +12,36 @@
 
 			{% csrf_token %}
 
-			<!-- Display each form. The as_p method wraps each element in a paragraph element. This ensures each element appears on a new line, making everything look neater. -->
+			<!-- Display each form. The as_p method wraps each element in a paragraph element. This ensures each element appears on a new line, making everything look neater. 
 
 			{{ user_form.as_p }}
 			{{ profile_form.as_p }}
+			-->
 
-			<!-- Provide a button to click to submit the form. -->
+			<!-- Provide a button to click to submit the form. 
 			<input type="submit" name="submit" value="Register" />
+		-->
+		<div class="col-sm-4 col-sm-offset-3">
+			<div class="row extra-bottom-padding">
+	 			<h2 class="text-center">User Registration</h2>
+	 		</div>
+
+			<div class="row extra-bottom-padding">
+				<input class="form-control" placeholder="Username" id="id_username" maxlength="254" name="username" type="text" required autofocus=""/>
+			</div>
+
+			<div class="row extra-bottom-padding">
+				<input class="form-control" placeholder="Email" id="id_email" name="email" required />
+			</div>
+
+			<div class="row extra-bottom-padding">
+				<input type="password" class="form-control" placeholder="Password" id="id_password" name="password" required />
+			</div>
+			
+			<div class="row extra-bottom-padding">
+				<button class="btn btn-lg btn-primary btn-block" type="submit" value="Submit" >Submit</button>
+			</div>
+		</div>
 </form>
 
 {% endif %}

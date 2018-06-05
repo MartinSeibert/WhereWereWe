@@ -130,8 +130,9 @@ when the search goes through, can pass the view the search.series which is a lis
 - had to bring in a fork of tvdbsimple because of an issue with the .Episodes.all() only working once
 - had to bring in Request with pipenv (interesting tool I should start using)
 
-- the way I determine the number of seasons is really slow for shows with lots of episodes... need to find a better way 
+- the way I determine the number of seasons is really slow for shows with lots of episodes... need to find a better way [found... series_eipsodes allows you to bring in a summary()] 
 
 5-14-18
 
 - there's more tvdbsimple examples in the source code itself
+

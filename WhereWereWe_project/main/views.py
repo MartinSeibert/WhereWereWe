@@ -95,7 +95,7 @@ def register(request):
 	# If it's a HTTP POST, we're interested in processing form data.
 	if request.method == 'POST':
 		# Attempt to grab information from the raw form information.
-		# Note that we make use of both UserFOrm and UserProfileForm
+		# Note that we make use of both UserForm and UserProfileForm
 		user_form = UserForm(data=request.POST)
 		profile_form = UserProfileForm(data=request.POST)
 

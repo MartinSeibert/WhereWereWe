@@ -14,6 +14,7 @@ class Show():
 		self.series_episodes = tvdb.Series_Episodes(id)
 		response = self.series_episodes.summary()
 
+		#map converts the list of strings to integers so that the max function works
 		self.seriesCount = max(map(int, self.series_episodes.airedSeasons))
 		self.posters = show.Images.poster()
 		self.series = show

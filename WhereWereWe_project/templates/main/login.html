@@ -13,12 +13,18 @@
 		<form class="form-signin" role="form" method="post" action="/login/"/>
 			{% csrf_token %}
 			
-			<input class="form-control" placeholder="Username" id="id_username" maxlength="254" name="username" type="text" required autofocus=""/>
+			<div class="row extra-bottom-padding">
+				<input class="form-control" placeholder="Username" id="id_username" maxlength="254" name="username" type="text" required autofocus=""/>
+			</div>
 
-			<input type="password" class="form-control" placeholder="Password" id="id_password" name="password" required />
-				
+			<div class="row extra-bottom-padding">
+				<input type="password" class="form-control" placeholder="Password" id="id_password" name="password" required />
+			</div>
+			
+			<div class="row extra-bottom-padding">
 				<button class="btn btn-lg btn-primary btn-block" type="submit" value="Submit" >Sign in</button>
-			</form>
+			</div>
+		</form>
 	</div>
 
 {% endblock %}
