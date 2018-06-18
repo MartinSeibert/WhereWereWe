@@ -24,11 +24,11 @@
 			<div class="col-xs-5 col-sm-5 placeholder">
 				<h4>Shows</h4>
 
-				{% if shows %}
+				{% if seriesList %}
 					
-						{% for show in shows %}
+						{% for series in seriesList %}
 						<li class="list-group-item">
-							<a href="{% url 'show' show.slug %}">{{ show.title }}</a>					
+							<a href="{% url 'show' series.id %}">{{ series.seriesName }}</a>					
 						</li>
 						
 						{% endfor %}

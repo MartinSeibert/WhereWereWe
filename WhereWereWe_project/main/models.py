@@ -2,22 +2,13 @@ from django.db import models
 from django.template.defaultfilters import slugify
 from django.contrib.auth.models import User
 
+import tvdbsimple as tvdb
+tvdb.KEYS.API_KEY = '491A6814F8241D30'
+
 # Create your models here.
 
-class Episode(models.Model):
-	title = models.CharField(max_length=128)
-
-	slug = models.SlugField()
-
-	def save(self, *args, **kwargs):
-
-		self.slug = slugify(self.title)
-		super(Episode, self).save(*args, **kwargs)
-
-	def __unicode__(self):
-		return self.title
-
 class Show(models.Model):
+	tvdb_id = model.PositiveIntigerField()
 	title = models.CharField(max_length=128)
 	episodes = models.ManyToManyField(Episode)
 

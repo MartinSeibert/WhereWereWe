@@ -136,3 +136,9 @@ when the search goes through, can pass the view the search.series which is a lis
 
 - there's more tvdbsimple examples in the source code itself
 
+6-05-18
+
+- merge show.py into models.py as a show model... then many to many with the userprofile just like it was before
+	then for index you only want to grab the shows that the current user is associated with
+
+- would be better to have the show details page take in a slugified title rather than an ID to make it human readable

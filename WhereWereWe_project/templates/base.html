@@ -43,10 +43,10 @@
                         <li><a href="{% url 'add_show' %}">Add a show</a></li>
                       <li><a href="{% url 'logout' %}?next=/">Logout</a></li>                       
                     {% else %}
-                        <li><a href="{% url 'register' %}">Register Here</a></li>
                         <li><a href="{% url 'login' %}">Login</a></li>
+                        <li><a href="{% url 'register' %}">Register</a></li>
                     {% endif %}
-                                <li><a href="{% url 'about' %}">About</a></li>
+                    <li><a href="{% url 'about' %}">About</a></li>
 
               </ul>
         </div>
