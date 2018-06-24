@@ -1,6 +1,6 @@
 from django import forms
 from django.contrib.auth.models import User
-from main.models import Show, User, Episode, UserProfile
+from main.models import Show, User, UserProfile
 from django.template.defaultfilters import slugify
 
 class ShowForm(forms.ModelForm):

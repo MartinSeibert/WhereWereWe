@@ -2,7 +2,6 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
-from main.models import  Episode
 from main.forms import ShowForm, UserForm, UserProfileForm
 from django.template.defaultfilters import slugify
 

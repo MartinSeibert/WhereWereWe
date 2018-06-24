@@ -8,10 +8,26 @@ tvdb.KEYS.API_KEY = '491A6814F8241D30'
 # Create your models here.
 
 class Show(models.Model):
-	tvdb_id = model.PositiveIntigerField()
-	title = models.CharField(max_length=128)
-	episodes = models.ManyToManyField(Episode)
 
+	def __init__(self, id):
+
+		self.tvdb_id = id
+		show = tvdb.Series(tvdb_id)
+		response = show.info()
+		
+		self.series_episodes = tvdb.Series_Episodes(tvdb_id)
+		response = self.series_episodes.summary()
+
+		#map converts the list of strings to integers so that the max function works
+		self.seriesCount = max(map(int, self.series_episodes.airedSeasons))
+		self.posters = show.Images.poster()
+		self.series = show
+
+	tvdb_id = models.PositiveIntegerField()
+	
+	#remove
+	title = models.CharField(max_length=128)
+	
 	# a slug field replaces spaces in the title with hyphens so that we can create human readable urls
 	slug = models.SlugField()
 

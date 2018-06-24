@@ -1,5 +1,5 @@
 from django.contrib import admin
-from main.models import  Show, Episode, UserProfile
+from main.models import  Show, UserProfile
 
 
 
@@ -7,11 +7,7 @@ from main.models import  Show, Episode, UserProfile
 class ShowAdmin(admin.ModelAdmin):
 	prepopulated_fields = {'slug':('title',)}
 
-class EpisodeAdmin(admin.ModelAdmin):
-	prepopulated_fields = {'slug':('title',)}
-
 # Register your models here.
 
 admin.site.register(Show, ShowAdmin)
-admin.site.register(Episode, EpisodeAdmin)
 admin.site.register(UserProfile)
